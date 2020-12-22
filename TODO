@@ -1,0 +1,47 @@
+Créer une page détail qui affiche le détail d'un post à partir de la page du listing des posts:
+  ✔ Créer fichier Posts-List-Item.js @done(20-12-06 20:24)
+  ✔ Créer composant PostsListItem avec le titre et le button sans datas pour le moment @done(20-12-06 20:24)
+  ✔ Créer une prop posts pour le composant PostsListItem qui va boucler dessus pour afficher les lignes @done(20-12-06 20:28)
+  ✔ Créer une route pour la liste des posts sur App.jsx @started(20-12-06 20:31) @done(20-12-06 20:41) @lasted(10m4s)
+  ✔ Créer un fichier post-detail-container.jsx avec un composant PostDetailContainer @started(20-12-07 12:25) @done(20-12-07 12:30) @lasted(5m57s)
+  ✔ Créer une route post/:id affiche le composant PostDetailContainer @done(20-12-07 13:10)
+  ✔ Créer un Link dans PostsListItem qui redirige vers la route post/:id @done(20-12-07 13:10)
+  ✔ Créer le composant PostDetail.jsx avec le template en dure @done(20-12-07 17:23)
+  ✔ Créer une méthode getPost dans le service post-service.js qui récupère un post par son id @started(20-12-07 17:25) @done(20-12-07 17:31) @lasted(6m1s)
+  ✔ Créer une constant GET_POST @started(20-12-07 17:40) @done(20-12-07 17:42) @lasted(2m47s)
+  ✔ Créer une action getPost() qui dispatch une action GET_POST après la bonne récupération du post de l'API @done(20-12-07 17:42)
+  ✔ Créer un fichier post-reducer.js avec une fonction postReducer @done(20-12-07 17:44)
+  ✔ Placer le nouveau reducer dans le root reducer @started(20-12-07 17:44) @done(20-12-07 17:45) @lasted(1m25s)
+  ✔ Récupérer le state post dans PostDetailContainer avec useSelector et l'id passé dans l'url @started(20-12-07 17:47) @done(20-12-07 18:03) @lasted(16m57s)
+  ✔ Passer en prop le post au composant PostDetail pour qu'il affiche les détails du post @done(20-12-07 18:08)
+  ✔ Implémenter le bouton retour vers la liste des posts @started(20-12-07 18:10) @done(20-12-07 18:25) @lasted(15m42s)
+
+Créer un filtre checkbox sur l'auteur des posts:
+  ✘ Dans le container Posts-List créer un state local et une fonction qui filtre les post par auteur si la checkbox est coché @started(20-12-07 18:35) @cancelled(20-12-07 19:12) @wasted(37m28s)
+  ✔ Créer une constante, une action, un reducer, pour un state redux bouléen isAuthorFilter qui reflète si la checkbox authorFilter est cochée @started(20-12-07 19:14) @done(20-12-07 19:51) @lasted(37m11s)
+  ✔ Créer une propriété calculée filteredPosts() qui retourne soit les posts filtré soit tous les posts @done(20-12-07 19:52)
+
+Pouvoir ajouter un post:
+  ✔ Créer un FAB button + dans le composant PostsList @done(20-12-08 19:20)
+  ✔ Créer un composant container post-add.js @done(20-12-18 08:50)
+  ✔ Créer une route post/add vers ce composant @done(20-12-18 08:50)
+  ✔ Implémenter la route sur le FAB button + @done(20-12-18 11:53)
+  ✔ Implémenter la gestion du formulaire dans le composant post-add.js @done(20-12-18 12:50)
+  ✔ Implémenter la méthode addPost dans le post-service.js @done(20-12-18 12:50)
+
+Pouvoir supprimer un post depuis la liste des posts:
+  ✔ Implémenter la suppression d'un post dans le composant posts-list.js @done(20-12-18 13:24)
+  ✔ Implémenter la méthode deletePost dans le post-service.js @done(20-12-18 13:24)
+  ✔ Créer une constante, une action, un reducer, pour supprimer un post du state @done(20-12-21 12:56)
+  ✔ Afficher une boite de dialogue confirm avant de supprimer le post @done(20-12-21 12:57)
+
+Pouvoir éditer un post depuis la liste des posts:
+  ✔ Créer un bouton éditer dans le composant post-list-item.js @done(20-12-21 13:01)
+  ✔ Ajouter une route vers le composant postContent avec l'id en paramètre d'url @done(20-12-21 17:47)
+  ✔ Renommage de post-detail-container.jsx en post-detail.jsx @done(20-12-22 13:13)
+  ✔ Refactor en créant un composant post-form.jsx, un container post-edit.jsx, un container post-add.jsx @done(20-12-22 13:13)
+  ✘ Création d'un model post.js @cancelled(20-12-22 13:51)
+
+Création d'un loader:
+  ✔ Implémentation de js boostrap dans le dossier public @done(20-12-22 13:13)
+  ✔ Création du composant loader.jsx @done(20-12-22 13:50)
