@@ -5,7 +5,6 @@ const PostContent = ({ post }) => {
   return (
     <>
       <article>
-        {post.id}
         <header>
           <h1>{post.title}</h1>
         </header>

@@ -4,6 +4,7 @@ import PostsList from "./containers/posts-list";
 import PostDetail from './containers/post-detail.jsx';
 import PostAdd from './containers/post-add.jsx';
 import PostEdit from './containers/post-edit.jsx';
+import PageNotFound from './components/page-not-found';
 import './App.css'
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
             <Route path='/post/add' component={PostAdd} />
             <Route path='/post/edit/:id' component={PostEdit} />
             <Route path='/post/:id' component={PostDetail} />
+            <Route component={PageNotFound} />
 
             {/* <PrivateRoute path='/pokemons/add' component={PokemonAdd} />
             <PrivateRoute path='/pokemons/edit/:id' component={PokemonEdit} />
