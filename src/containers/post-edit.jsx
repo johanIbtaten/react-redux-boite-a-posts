@@ -7,26 +7,20 @@ import { getPost } from '../actions';
 const PostEdit = ({ match }) => {
   const dispatch = useDispatch();
 
-  const [loading, setLoading]  = useState(true);
-  
+  const [loading, setLoading] = useState(true);
+
   const post = useSelector((state) => state.post);
- 
+
   useEffect(() => {
     dispatch(getPost(+match.params.id)).then(() => {
       setLoading(false);
-    })
+    });
   }, []);
 
   return (
     <div className='col-md-6'>
       <h1>Editer le post</h1>
-      {!loading ? (
-          <PostForm post={post} isEdit />
-      ) : (
-        <h4 className='center'>
-          <Loader />
-        </h4>
-      )}
+      {!loading ? <PostForm post={post} isEdit /> : <Loader />}
     </div>
   );
 };

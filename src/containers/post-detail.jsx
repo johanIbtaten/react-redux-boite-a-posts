@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
+import Loader from './../components/loader';
 import PostContent from '../components/post-content';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPost } from '../actions';
@@ -6,16 +7,23 @@ import { getPost } from '../actions';
 const PostDetail = ({ match }) => {
   const post = useSelector((state) => state.post);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getPost(+match.params.id));
+    dispatch(getPost(+match.params.id)).then(() => {
+      setLoading(false);
+    });
   }, []);
 
   return (
     <>
-      <div className='col-md-12'>
-        <PostContent post={post} />
-      </div>
+      {!loading ? (
+        <div className='col-md-12'>
+          <PostContent post={post} />
+        </div>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

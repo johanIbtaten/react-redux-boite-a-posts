@@ -45,3 +45,6 @@ Pouvoir éditer un post depuis la liste des posts:
 Création d'un loader:
   ✔ Implémentation de js boostrap dans le dossier public @done(20-12-22 13:13)
   ✔ Création du composant loader.jsx @done(20-12-22 13:50)
+
+✔ Création page-not-found.jsx @done(20-12-23 08:27)
+✔ Ajout loading sur page-detail.jsx @done(20-12-23 08:27)
