@@ -50,6 +50,22 @@ export const deletePost = (id) => {
   };
 };
 
+export const addPost = (post) => {
+  return (dispatch) => {
+    return PostService.addPost(post)
+      .then((response) => {
+        console.log('addPost action', response); ///////////////////////////////////////
+        dispatch({
+          type: ADD_POST,
+          payload: response,
+        });
+      })
+      .catch((error) => {
+        console.error('Error Post API', error);
+      });
+  };
+};
+
 export const setIsAuthorFilter = (isChecked) => {
   return {
     type: SET_IS_AUTHOR_FILTER,

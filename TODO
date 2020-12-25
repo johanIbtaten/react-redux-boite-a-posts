@@ -48,3 +48,4 @@ Création d'un loader:
 
 ✔ Création page-not-found.jsx @done(20-12-23 08:27)
 ✔ Ajout loading sur page-detail.jsx @done(20-12-23 08:27)
+✔ Ajout de named route url avec la library named-urls @done(20-12-23 11:03)

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import routes from '../routes';
 import PostService from '../services/post-service';
 
 const PostForm = ({ post, isEdit }) => {
@@ -149,9 +150,9 @@ const PostForm = ({ post, isEdit }) => {
 
       if (isEdit) {
         newPost.id = post.id;
-        PostService.updatePost(newPost).then((post) => history.push(`/posts`));
+        PostService.updatePost(newPost).then((post) => history.push(`${routes.posts}`));
       } else {
-        PostService.addPost(newPost).then((post) => history.push(`/posts`));
+        PostService.addPost(newPost).then((post) => history.push(`${routes.posts}`));
       }
     }
   };
@@ -206,7 +207,7 @@ const PostForm = ({ post, isEdit }) => {
           name='retour'
           type='button'
           className='btn btn-danger mr-4'
-          to='/posts'
+          to={`${routes.posts}`}
         >
           Retour
         </Link>

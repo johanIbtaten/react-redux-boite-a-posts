@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import routes from '../routes'
 import PostsListItem from '../components/posts-list-item';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPosts, deletePost, setIsAuthorFilter } from '../actions';
@@ -30,11 +31,6 @@ const PostsList = () => {
         console.log('Delete Post Success'); ///////////////////////////////////////
       });
     });
-    // PostService.deletePost(id).then(() => {
-    //   alert('Delete Post Success');
-    //   history.push(`/posts`);
-    // });
-    // PostService.deletePost(id).then(() => alert("Delete Post Success"));
   };
 
   const [loading, setLoading] = useState(true);
@@ -45,6 +41,25 @@ const PostsList = () => {
       setLoading(false);
     });
   }, []);
+
+  const renderPosts = () => {
+    if (Array.isArray(posts) && posts.length) {
+      return filteredPosts().map((post) => (
+        <PostsListItem
+          key={post.id}
+          post={post}
+          handleClick={handleDeletePost}
+        />
+      ));
+    } else {
+      console.log('Pas de posts'); ///////////////////////////
+      return (
+        <tr>
+          <td>Aucun post</td>
+        </tr>
+      );
+    }
+  };
 
   return (
     <>
@@ -73,10 +88,9 @@ const PostsList = () => {
             </tr>
           </thead>
           <tbody>
-            <PostsListItem
-              posts={filteredPosts()}
-              handleClick1={handleDeletePost}
-            />
+            {
+              renderPosts()
+            }
           </tbody>
         </table>
       ) : (
@@ -92,7 +106,7 @@ const PostsList = () => {
             className='btn btn-main btn-primary has-tooltip'
             data-placement='left'
             title='Menu'
-            to={`/post/add`}
+            to={`${routes.post.add}`}
           >
             <i className='fa fa-plus'></i>
           </Link>

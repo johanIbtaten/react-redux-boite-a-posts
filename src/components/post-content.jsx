@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import routes from '../routes';
 
 const PostContent = ({ post }) => {
   return (
@@ -11,7 +12,7 @@ const PostContent = ({ post }) => {
         <p>{post.content}</p>
         <address>{post.author}</address>
       </article>
-      <Link to={`/posts`} className='btn btn-warning'>
+      <Link to={`${routes.posts}`} className='btn btn-warning'>
         Retour
       </Link>
     </>

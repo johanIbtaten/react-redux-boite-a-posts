@@ -1,28 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { reverse } from 'named-urls';
+import routes from '../routes';
 
-const PostsListItem = ({ posts, handleClick1 }) => {
+const PostsListItem = ({ post, handleClick }) => {
   return (
-    <>
-      {posts.map((post) => (
-        <tr key={post.id}>
-          <td>
-            <Link to={`/post/${post.id}`}>{post.title}</Link>
-          </td>
-          <td>
-            <Link className='btn btn-primary mr-3' to={`/post/edit/${post.id}`}>
-              Éditer
-            </Link>            
-            <button
-              className='btn btn-danger'
-              onClick={() => handleClick1(post.id)}
-            >
-              Supprimer
-            </button>
-          </td>
-        </tr>
-      ))}
-    </>
+    <tr>
+      <td>
+        <Link to={reverse(`${routes.post.show}`, { id: post.id })}>
+          {post.title}
+        </Link>
+      </td>
+      <td>
+        <Link
+          className='btn btn-primary mr-3'
+          to={reverse(`${routes.post.edit}`, { id: post.id })}
+        >
+          Éditer
+        </Link>
+        <button className='btn btn-danger' onClick={() => handleClick(post.id)}>
+          Supprimer
+        </button>
+      </td>
+    </tr>
   );
 };
 export default PostsListItem;

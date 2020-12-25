@@ -5,6 +5,7 @@ import PostDetail from './containers/post-detail.jsx';
 import PostAdd from './containers/post-add.jsx';
 import PostEdit from './containers/post-edit.jsx';
 import PageNotFound from './components/page-not-found';
+import routes from './routes';
 import './App.css'
 
 export default function App() {
@@ -14,11 +15,11 @@ export default function App() {
         <div />
         <div className='row'>
           <Switch>
-            <Route exact path='/' component={PostsList} />
-            <Route exact path='/posts' component={PostsList} />
-            <Route path='/post/add' component={PostAdd} />
-            <Route path='/post/edit/:id' component={PostEdit} />
-            <Route path='/post/:id' component={PostDetail} />
+            <Route exact path={routes.home} component={PostsList} />
+            <Route exact path={routes.posts} component={PostsList} />
+            <Route path={routes.post.add} component={PostAdd} />
+            <Route path={routes.post.edit} component={PostEdit} />
+            <Route path={routes.post.show} component={PostDetail} />
             <Route component={PageNotFound} />
 
             {/* <PrivateRoute path='/pokemons/add' component={PokemonAdd} />
